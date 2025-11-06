@@ -114,3 +114,4 @@ formCheckout.addEventListener('submit', (e) => {
 });
 
 loadData();
+//run it
