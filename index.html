@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMart Store Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navBar">
+        <div class="navLeft">
+            <h2 class="siteName">GMart Store</h2>
+        </div>
+
+        <div class="navMiddle">
+            <select id="catSelect" class="catSelect">
+                <option value="all">All</option>
+            </select>
+            <button id="btnSearch" class="btnSearch">Search</button>
+        </div>
+
+        <div class="navRight">
+            <button id="btnCart" class="btnCart"> Your Cart</button>
+        </div>
+    </div>
+    <div class="searchBox" id="searchBoxDiv">
+        <input type="text" id="searchInput" placeholder="Search Product Here With GMart Store.....">
+    </div>
+    <div class="mainBox" id="mainBox">
+
+    </div>
+    <div class="cartDiv" id="cartDiv" style="display: none;"></div>
+    <form class="formCheckout" id="formCheckout" style="display: none;">
+        <h2>Checkout</h2>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Address" required>
+        <button type="submit" class="btnSubmit">Submit Order</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
