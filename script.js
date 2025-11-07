@@ -7,6 +7,9 @@ const btnCart = document.getElementById('btnCart');
 const cartDiv = document.getElementById('cartDiv');
 const formCheckout = document.getElementById('formCheckout');
 
+const carousel = document.querySelector('.carousel');
+const footer = document.querySelector('.footer');
+
 let allProducts = [];
 let cartItems = JSON.parse(localStorage.getItem('myCart')) || [];
 
@@ -17,6 +20,7 @@ async function loadData() {
   showCats();
   showProducts(allProducts);
 }
+
 function showProducts(data) {
   mainBox.innerHTML = "";
   data.forEach(item => {
@@ -30,7 +34,11 @@ function showProducts(data) {
     `;
     mainBox.appendChild(div);
   });
+  
+  carousel.style.display = 'block';
+  footer.style.display = 'block';
 }
+
 function showCats() {
   let cats = [...new Set(allProducts.map(p => p.category))];
   cats.forEach(c => {
@@ -40,6 +48,7 @@ function showCats() {
     catSelect.appendChild(opt);
   });
 }
+
 function addToCart(id) {
   let product = allProducts.find(p => p.id === id);
   let exist = cartItems.find(x => x.id === id);
@@ -51,10 +60,13 @@ function addToCart(id) {
   localStorage.setItem('myCart', JSON.stringify(cartItems));
   alert('Item added to cart!');
 }
+
 btnCart.addEventListener('click', () => {
   mainBox.style.display = 'none';
   formCheckout.style.display = 'none';
   cartDiv.style.display = 'block';
+  carousel.style.display = 'none';
+  footer.style.display = 'none';
   showCartItems();
 });
 
@@ -76,8 +88,11 @@ function showCartItems() {
   document.getElementById('btnCheckout').addEventListener('click', () => {
     cartDiv.style.display = 'none';
     formCheckout.style.display = 'block';
+    carousel.style.display = 'none';
+    footer.style.display = 'none';
   });
 }
+
 btnSearch.addEventListener('click', () => {
   if (searchBoxDiv.style.display === "block") {
     searchBoxDiv.style.display = "none";
@@ -88,11 +103,13 @@ btnSearch.addEventListener('click', () => {
     searchInput.focus();
   }
 });
+
 searchInput.addEventListener('input', (e) => {
   let val = e.target.value.toLowerCase();
   let filtered = allProducts.filter(p => p.title.toLowerCase().includes(val));
   showProducts(filtered);
 });
+
 catSelect.addEventListener('change', (e) => {
   let cat = e.target.value;
   if (cat === 'all') {
@@ -102,6 +119,7 @@ catSelect.addEventListener('change', (e) => {
     showProducts(filtered);
   }
 });
+
 formCheckout.addEventListener('submit', (e) => {
   e.preventDefault();
   alert('Order placed successfully! (Demo)');
@@ -110,8 +128,9 @@ formCheckout.addEventListener('submit', (e) => {
   formCheckout.reset();
   formCheckout.style.display = 'none';
   mainBox.style.display = 'grid';
+  carousel.style.display = 'block';
+  footer.style.display = 'block';
   loadData();
 });
 
 loadData();
-//run it

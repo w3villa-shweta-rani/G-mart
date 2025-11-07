@@ -11,23 +11,41 @@
 <body>
     <div class="navBar">
         <div class="navLeft">
-            <h2 class="siteName">GMart Store</h2>
+            <h2 class="siteName" style="color: #00bcd4;">GMart Store</h2>
         </div>
-
-        <div class="navMiddle">
-            <select id="catSelect" class="catSelect">
-                <option value="all">All</option>
-            </select>
-            <button id="btnSearch" class="btnSearch">Search</button>
-        </div>
-
         <div class="navRight">
-            <button id="btnCart" class="btnCart"> Your Cart</button>
+
+            <div class="navMiddle">
+
+                <select id="catSelect" class="catSelect">
+                    <option value="all">All</option>
+                </select>
+                <button id="btnSearch" class="btnSearch">Search</button>
+                <button id="btnCart" class="btnCart"> 🛒 Cart</button>
+            </div>
         </div>
     </div>
     <div class="searchBox" id="searchBoxDiv">
         <input type="text" id="searchInput" placeholder="Search Product Here With GMart Store.....">
     </div>
+    
+    <div class="carousel">
+        <div class="slides">
+            
+            <div class="slide">
+                <img src="./asset/img1.png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="./asset/image.png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="./asset/image copy.png" alt="Slide 3">
+            </div>
+        </div>
+
+        
+    </div>
+
     <div class="mainBox" id="mainBox">
 
     </div>
@@ -40,6 +58,42 @@
         <button type="submit" class="btnSubmit">Submit Order</button>
     </form>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2 class="footer-title">Gmart</h2>
+                <p>Your one-stop shop for fashion, electronics, and more. Enjoy the best deals and fast delivery!</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section support">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fa fa-map-marker"></i> New Delhi, India</p>
+                <p><i class="fa fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fa fa-envelope"></i> support@gmart.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Gmart. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 
